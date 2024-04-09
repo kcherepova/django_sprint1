@@ -1,4 +1,4 @@
-def test_blog_posts(posts):
+﻿def test_blog_posts(posts):
     try:
         from blog.views import posts as solution_posts
     except Exception as e:

@@ -1,4 +1,4 @@
-from django import get_version
+﻿from django import get_version
 
 
 def test_django_version():

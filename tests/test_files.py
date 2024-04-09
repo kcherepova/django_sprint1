@@ -1,4 +1,4 @@
-import os
+﻿import os
 
 
 def test_project_folder_in_place(root_dir, project_dirname):

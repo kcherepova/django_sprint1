@@ -1,4 +1,4 @@
-import pytest
+﻿import pytest
 
 from tests.conftest import try_get_url
 

@@ -1,4 +1,4 @@
-import pytest
+﻿import pytest
 from django.urls import reverse, NoReverseMatch
 
 
