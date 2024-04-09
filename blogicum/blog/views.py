@@ -50,7 +50,6 @@ LOCATION_POSTS = {post["id"]: post for post in posts}
 def index(request):
     template = "blog/index.html"
     context = {"posts": reversed(posts)}
-
     return render(request, template, context)
 
 
@@ -58,12 +57,10 @@ def post_detail(request, id):
     post_link = LOCATION_POSTS.get(id)
     template = "blog/detail.html"
     context = {"post": post_link}
-
     return render(request, template, context)
 
 
 def category_posts(request, category_slug):
     template = "blog/category.html"
     context = {"category_slug": category_slug}
-
     return render(request, template, context)
