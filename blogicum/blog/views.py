@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import Http404
 
 posts = [
     {
@@ -44,7 +45,7 @@ posts = [
 ]
 
 
-LOCATION_POSTS = {post["id"]: post for post in posts}
+REPOSITORY_POSTS = {post["id"]: post for post in posts}
 
 
 def index(request):
@@ -54,9 +55,11 @@ def index(request):
 
 
 def post_detail(request, id):
-    post_link = LOCATION_POSTS.get(id)
+    correct_post = REPOSITORY_POSTS.get(id)
+    if correct_post is None:
+        raise Http404('Такая страница не существует :(')
     template = "blog/detail.html"
-    context = {"post": post_link}
+    context = {"post": correct_post}
     return render(request, template, context)
 
 
