@@ -45,7 +45,7 @@ posts = [
 ]
 
 
-REPOSITORY_POSTS = {post["id"]: post for post in posts}
+POSTS_DIR = {post["id"]: post for post in posts}
 
 
 def index(request):
@@ -55,7 +55,7 @@ def index(request):
 
 
 def post_detail(request, post_id):
-    correct_post = REPOSITORY_POSTS.get(post_id)
+    correct_post = POSTS_DIR.get(post_id)
     if correct_post is None:
         raise Http404('Такая страница не существует :(')
     template = "blog/detail.html"
