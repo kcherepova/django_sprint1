@@ -54,8 +54,8 @@ def index(request):
     return render(request, template, context)
 
 
-def post_detail(request, id):
-    correct_post = REPOSITORY_POSTS.get(id)
+def post_detail(request, post_id):
+    correct_post = REPOSITORY_POSTS.get(post_id)
     if correct_post is None:
         raise Http404('Такая страница не существует :(')
     template = "blog/detail.html"
